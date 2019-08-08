@@ -104,6 +104,6 @@ model1 = gensim.models.Word2Vec(speechWords, min_count=1, size=10, window=5)
 
 model1.save("word2vecPolitical.model")
 
-# for x in range(10):
-#     w = porter.stem(input("Enter a word to test: "))
-#     print(w+": "+str(model1.most_similar(positive=w)))
+for x in range(10):
+    w = porter.stem(input("Enter a word to test: "))
+    print(w+": "+str(model1.most_similar(positive=w)))
