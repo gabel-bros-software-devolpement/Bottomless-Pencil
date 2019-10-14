@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="{{ url_for('static', filename='mainBP.css') }}">
+        <!-- static/mainBP.css -->
+    </head>
+    <body>
+        <form method='POST' action ="">
+            {{ form.school(class='', style="font-size: 20pt") }}
+            {{ form.submit(class='', style="font-size: 20pt") }}
+        </form>
+
+        <div>
+            <table style="width:100%">
+                <tr>
+                    <th>School</th>
+                    <th>Primary</th>
+                    <th>Secondary</th>
+                    <th>Type</th>
+                    <th>City</th>
+                    <th>Campus(acres)</th>
+                    <th>Students</th>
+                    <th>Staff</th>
+                </tr>
+                {% for x in schools | reverse %}
+                    <tr>
+                        <td><a href='{{ x.url }}'>{{ x.name }}</a></td>
+                        <td style="background-color:{{ x.colors[0] }}">{{ x.colors[0] }}</td>
+                        <td style="background-color:{{ x.colors[1] }}">{{ x.colors[1] }}</td>
+                        <td>{{ x.type }}</td>
+                        <td>{{ x.loc[0] }}</td>
+                        <td>{{ x.camp }}</td>
+                        <td>{{ x.students }}</td>
+                        <td>{{ x.staff }}</td>
+                    </tr>
+
+                {% endfor %}
+            </table>        
+            <!-- {% for s in schools %}
+                <span>
+                    <h1>{{ s.name }}</h1>
+                    <table style="width:10%; height:5%;">
+                        <tr>
+                            <th colspan="2">Colors</th>
+                        </tr>
+                        <tr>
+                            <td style="background-color:{{ s.colors[0] }}">{{ s.colors[0] }}</td>
+                            <td style="background-color:{{ s.colors[1] }}">{{ s.colors[1] }}</td>
+                        </tr>
+                    </table>
+                </span>
+            {% endfor %} -->
+        </div>
+
+    </body>
+</html>

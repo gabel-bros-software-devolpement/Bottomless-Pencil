@@ -1,0 +1,28 @@
+.right {
+    /* float: right; */
+    width: 50%;
+}
+
+.right {
+    /* float: left; */
+    width: 50%;
+
+}
+
+.b {
+    border-width: 20px;
+    border-color: #616161;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.left {
+    float:left;
+}
+
+.right {
+    float:right;
+}
